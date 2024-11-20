@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гоголь</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Додано підключення CSS бібліотеки Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Кнопка для модального вікна -->
+<button class="btn bg-blue-500 text-white hover:bg-blue-700 py-2 px-4 rounded transition duration-300" id="hoverButton">Наведіть на мене</button>
+<div id="modal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded shadow-lg" style="display: none;">Модальне вікно</div>
+
+<!-- Кнопка для модального вікна -->
+<a href="#" class="btn-ghost-call inline-block border-2 border-blue-500 text-blue-500 py-2 px-4 rounded transition duration-300 hover:bg-blue-500 hover:text-white">Замовити дзвінок</a>
+<div id="myModal" class="myModal fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded shadow-lg" style="display: none;">
+    <form action="#">
+        <span id="myModal_close" class="close absolute top-0 right-0 m-4 text-gray-500 cursor-pointer">x</span>
+        <h3 class="text-lg font-semibold mb-4">Заповніть форму, щоб опинитись у нашій команді</h3>
+        <input type="text" placeholder="Ім'я" class="input mb-4">
+        <input type="email" placeholder="E-mail" class="input mb-4">
+        <input type="tel" placeholder="Телефон" class="input mb-4">
+        <!-- Додано поле для коментарів -->
+        <textarea placeholder="Ваші коментарі" class="input mb-4"></textarea>
+        <button type="submit" class="btn bg-blue-500 text-white py-2 px-4 rounded transition duration-300 hover:bg-blue-700">Мені це потрібно</button>
+    </form>
+</div>
+<div id="myOverlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden"></div>
+
+<!-- Секція з новинами -->
+<div class="news-section container mx-auto mt-10">
+    <h2 class="text-3xl font-semibold mb-6">Новини</h2>
+    <button class="btn-ghost inline-block border-2 border-gray-300 text-gray-700 py-2 px-4 rounded transition duration-300 mb-6" id="loadNews">Дивитись ще</button>
+    <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="news-item bg-white p-6 rounded shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16 mx-auto mb-4 text-blue-500">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            <div class="news-details">
+                <h3 class="text-lg font-semibold mb-2">Новина 1</h3>
+                <p class="text-gray-600">Опис новини 1</p>
+                <!-- Додано додаткову інформацію -->
+                <p class="text-gray-500 mt-2">Подробиці: <span class="font-semibold">Більше інформації про цю новину тут.</span></p>
+            </div>
+        </div>
+        <div class="news-item bg-white p-6 rounded shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16 mx-auto mb-4 text-blue-500">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+            <div class="news-details">
+                <h3 class="text-lg font-semibold mb-2">Новина 2</h3>
+                <p class="text-gray-600">Опис новини 2</p>
+                <!-- Додано додаткову інформацію -->
+                <p class="text-gray-500 mt-2">Подробиці: <span class="font-semibold">- опис послідовності виконання дій;
+                </span></p>
+            </div>
+        </div>
+        <!-- Додайте інші новини за необхідності -->
+    </div>
+</div>
+
+<!-- Кнопка "Наверх" -->
+<a href="#top" class="totop fixed bottom-4 right-4 z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-gray-700 transition duration-300">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+</a>
+
+<!-- Підключення jQuery та власного JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
